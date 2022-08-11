@@ -218,8 +218,13 @@
     <Compile Include="Migrations\202208110847017_AddAttendance.Designer.cs">
       <DependentUpon>202208110847017_AddAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202208111514584_AddFollowing.cs" />
+    <Compile Include="Migrations\202208111514584_AddFollowing.Designer.cs">
+      <DependentUpon>202208111514584_AddFollowing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Attendance.cs" />
+    <Compile Include="Models\Following.cs" />
     <Compile Include="ViewModels\AccountViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -342,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202208110847017_AddAttendance.resx">
       <DependentUpon>202208110847017_AddAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208111514584_AddFollowing.resx">
+      <DependentUpon>202208111514584_AddFollowing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
