@@ -21,9 +21,7 @@ namespace GigHub.Controllers.Api
         {
             var userId = User.Identity.GetUserId();
 
-            var exists = _context.Followings.Any(f => f.ArtistId == dto.ArtistId && f.FollowerId == userId);
-
-            if (exists)
+            if (_context.Followings.Any(f => f.ArtistId == dto.ArtistId && f.FollowerId == userId))
                 return BadRequest("Artist already followed.");
 
             var following = new Following

@@ -27,6 +27,11 @@ namespace GigHub.Models
                 .WithMany()
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Following>()
+                .HasRequired(a => a.Artist)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
             base.OnModelCreating(modelBuilder);
         }
     }

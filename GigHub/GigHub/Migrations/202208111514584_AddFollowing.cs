@@ -15,7 +15,7 @@ namespace GigHub.Migrations
                         ArtistId = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.FollowerId, t.ArtistId })
-                .ForeignKey("dbo.AspNetUsers", t => t.ArtistId, cascadeDelete: true)
+                .ForeignKey("dbo.AspNetUsers", t => t.ArtistId)
                 .ForeignKey("dbo.AspNetUsers", t => t.FollowerId, cascadeDelete: true)
                 .Index(t => t.FollowerId)
                 .Index(t => t.ArtistId);

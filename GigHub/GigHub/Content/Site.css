@@ -143,3 +143,9 @@ h6,
 .gigs > li .genre {
     font-size: 15px;
 }
+
+.gigs > li .follow {
+    position: absolute;
+    top: 0;
+    left: 220px;
+}

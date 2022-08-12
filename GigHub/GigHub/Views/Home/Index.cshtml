@@ -24,13 +24,16 @@
                 </span>
                 <button data-gig-id="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going ?</button>
             </div>
+            <div class="follow">
+                <button data-artist-id="@gig.ArtistId" class="btn btn-default btn-sm js-toggle-following">Follow ?</button>
+            </div>
         </li>
     }
 </ul>
 @section scripts
 {
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $(".js-toggle-attendance").click(function (e) {
                 var button = $(e.target);
                 $.post("/api/attendances", { gigId: button.attr("data-gig-id") })
@@ -39,6 +42,21 @@
                             .removeClass("btn-default")
                             .addClass("btn-info")
                             .text("Going");
+                    })
+                    .fail(function () {
+                        alert("Something went wrong");
+                    })
+            });
+        });
+        $(document).ready(function () {
+            $(".js-toggle-following").click(function (e) {
+                var button = $(e.target);
+                $.post("/api/followings", { artistId: button.attr("data-artist-id") })
+                    .done(function () {
+                        button
+                            .removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Following");
                     })
                     .fail(function () {
                         alert("Something went wrong");
