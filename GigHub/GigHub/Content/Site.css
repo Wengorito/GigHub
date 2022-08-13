@@ -100,8 +100,6 @@ h6,
 }
 
 .btn {
-/*    padding: 7px 20px;
-    font-size: 17px;*/
     border-radius: 9px;
 }
 
@@ -161,4 +159,13 @@ h6,
 .followings > li {
     margin-bottom: 30px;
     font-size: 20px;
+}
+
+.gigs > li .actions {
+    font-size: 15px;
+    display: none;
+}
+
+.gigs > li:hover .actions {
+    display: block;
 }
