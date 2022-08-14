@@ -20,11 +20,19 @@
             </div>
             <div class="details">
                 <span class="artist">
-                    @gig.Artist.Name <button data-artist-id="@gig.ArtistId" class="btn btn-link btn-sm js-toggle-following">Follow</button>                    
+                    @gig.Artist.Name <button data-artist-id="@gig.ArtistId" class="btn btn-link btn-sm js-toggle-following">Follow</button>
+                    @if (gig.IsCanceled)
+                    {
+                        <span class="label label-warning">Cancelled</span>
+                    }
                 </span>
                 <span class="genre">
                     @gig.Genre.Name
-                </span> <button data-gig-id="@gig.Id" class="btn btn-danger btn-sm pull-right js-toggle-attendance">Not going</button>                
+                </span>
+                @if (!gig.IsCanceled)
+                {
+                    <button data-gig-id="@gig.Id" class="btn btn-danger btn-sm pull-right js-toggle-attendance">Not going</button>
+                }
             </div>
         </li>
     }
