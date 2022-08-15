@@ -104,24 +104,22 @@ namespace GigHub.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Update(GigFormViewModel viewModel)
         {
-            var userId = User.Identity.GetUserId();
-
             if (!ModelState.IsValid)
             {
                 viewModel.Genres = _context.Genres.ToList();
                 return View("GigForm", viewModel);
             }
-            // Check for nulls
-            var gig = _context.Gigs.Single(g => g.Id == viewModel.Id);
 
-            gig.Venue = viewModel.Venue;
-            gig.GenreId = viewModel.GenreId;
-            gig.DateTime = viewModel.GetDateTime();
-            
+            var userId = User.Identity.GetUserId();
+            var gig = _context.Gigs
+                .Include(g => g.Attendances.Select(a => a.Attendee))
+                .Single(g => g.Id == viewModel.Id && g.ArtistId == userId);
+
+            gig.Modify(viewModel.Venue, viewModel.GenreId, viewModel.GetDateTime());
+
             _context.SaveChanges();
 
             return RedirectToAction("Mine", "Gigs");
         }
-
     }
 }
