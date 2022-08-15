@@ -182,7 +182,19 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\GigsController.cs" />
     <Compile Include="Controllers\FollowingsController.cs" />
+    <Compile Include="Migrations\202208131446293_AddIsCanceledToGig.cs" />
+    <Compile Include="Migrations\202208131446293_AddIsCanceledToGig.Designer.cs">
+      <DependentUpon>202208131446293_AddIsCanceledToGig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208141236258_AddNotification.cs" />
+    <Compile Include="Migrations\202208141236258_AddNotification.Designer.cs">
+      <DependentUpon>202208141236258_AddNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NotificationType.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\UserNotification.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="Dtos\FollowDto.cs" />
     <Compile Include="Controllers\Api\FollowingsController.cs" />
@@ -265,6 +277,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -357,6 +370,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202208111514584_AddFollowing.resx">
       <DependentUpon>202208111514584_AddFollowing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208131446293_AddIsCanceledToGig.resx">
+      <DependentUpon>202208131446293_AddIsCanceledToGig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208141236258_AddNotification.resx">
+      <DependentUpon>202208141236258_AddNotification.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
