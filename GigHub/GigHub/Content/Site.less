@@ -1,0 +1,287 @@
+﻿@red: red;
+@white: #fff;
+@color_3: #333;
+@font_family_1: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+@background_color_1: #ff4342;
+@background_color_2: #cd28278c;
+@border_color_1: #ff4342;
+@border_color_2: #2196f3;
+
+
+
+
+
+
+body {
+    padding-top: 90px;
+    padding-bottom: 20px;
+    font-size: 17px;
+    font-family: @font_family_1;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dl-horizontal {
+    dt {
+        white-space: normal;
+    }
+}
+
+input {
+    max-width: 280px;
+}
+
+select {
+    max-width: 280px;
+}
+
+textarea {
+    max-width: 280px;
+}
+
+span.field-validation-error {
+    color: @red;
+    font-weight: bold;
+}
+
+.voffset {
+    margin-top: 2px;
+}
+
+.voffset1 {
+    margin-top: 5px;
+}
+
+.voffset2 {
+    margin-top: 10px;
+}
+
+.voffset3 {
+    margin-top: 20px;
+}
+
+.voffset4 {
+    margin-top: 40px;
+}
+
+.voffset5 {
+    margin-top: 80px;
+}
+
+.popover {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.navbar-inverse {
+    background-color: @background_color_1;
+    border-color: @border_color_1;
+
+    .navbar-nav {
+        > li {
+            > a {
+                color: @white;
+            }
+        }
+
+        > .open {
+            > a {
+                background-color: @background_color_2;
+
+                &:hover {
+                    background-color: @background_color_2;
+                }
+
+                &:focus {
+                    background-color: @background_color_2;
+                }
+            }
+        }
+    }
+
+    .navbar-brand {
+        color: @white;
+    }
+
+    .notifications {
+        position: relative;
+
+        .badge {
+            position: absolute;
+            top: 8px;
+            right: -2px;
+            background: #a80a0a;
+        }
+    }
+}
+
+.dropdown-menu {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+h1 {
+    font-family: @font_family_1;
+}
+
+h2 {
+    font-family: @font_family_1;
+}
+
+h3 {
+    font-family: @font_family_1;
+}
+
+h4 {
+    font-family: @font_family_1;
+}
+
+h5 {
+    font-family: @font_family_1;
+}
+
+h6 {
+    font-family: @font_family_1;
+}
+
+.h1 {
+    font-family: @font_family_1;
+}
+
+.h2 {
+    font-family: @font_family_1;
+}
+
+.h3 {
+    font-family: @font_family_1;
+}
+
+.h4 {
+    font-family: @font_family_1;
+}
+
+.h5 {
+    font-family: @font_family_1;
+}
+
+.h6 {
+    font-family: @font_family_1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    font-size: 17px;
+    padding: 0px 15px;
+    height: 42px;
+    border-radius: 9px;
+
+    &:focus {
+        border-color: @border_color_2;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.btn {
+    border-radius: 9px;
+}
+
+.gigs {
+    list-style: none;
+
+    > li {
+        position: relative;
+        margin-bottom: 30px;
+
+        .date {
+            background: red;
+            color: @white;
+            text-align: center;
+            width: 60px;
+            border-radius: 8px;
+
+            .month {
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: bold;
+                padding: 2px 6px;
+            }
+
+            .day {
+                background: #f7f7f7;
+                color: @color_3;
+                font-size: 20px;
+                padding: 6px 12px;
+            }
+        }
+
+        .details {
+            position: absolute;
+            top: 0;
+            left: 70px;
+
+            .artist {
+                font-weight: bold;
+                display: block;
+            }
+
+            .genre {
+                font-size: 15px;
+            }
+        }
+
+        .actions {
+            font-size: 15px;
+            display: none;
+        }
+
+        &:hover {
+            .actions {
+                display: block;
+            }
+        }
+    }
+}
+
+.followings {
+    list-style: none;
+
+    > li {
+        margin-bottom: 30px;
+        font-size: 20px;
+    }
+}
+
+.popover-notifications {
+    .popover-content {
+        padding: 0;
+    }
+
+    ul.notifications {
+        list-style: none;
+        padding-left: 0;
+
+        > li {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .highlight {
+            font-weight: bold;
+        }
+    }
+}
