@@ -125,11 +125,15 @@ h6 {
   padding: 0px 15px;
   height: 42px;
   border-radius: 9px;
+  transition: none;
 }
 .form-control:focus {
   border-color: #2196f3;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+.input-group-btn > .btn {
+  height: 42px;
 }
 .btn {
   border-radius: 9px;
@@ -202,4 +206,7 @@ h6 {
 }
 .popover-notifications ul.notifications .highlight {
   font-weight: bold;
+}
+#searchGigs {
+  width: 300px;
 }
