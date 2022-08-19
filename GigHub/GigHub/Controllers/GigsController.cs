@@ -8,7 +8,6 @@ using System.Web.Mvc;
 
 namespace GigHub.Controllers
 {
-    [Authorize]
     public class GigsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -18,6 +17,38 @@ namespace GigHub.Controllers
             _context = new ApplicationDbContext();
         }
 
+        public ActionResult Details(int id)
+        {
+            var gig = _context.Gigs
+                .Include(g => g.Attendances)
+                .Include(g => g.Artist)
+                .Include(g => g.Genre)
+                .SingleOrDefault(g => g.Id == id);
+
+            if (gig == null)
+                return HttpNotFound();
+
+            var viewModel = new GigDetailsViewModel { Gig = gig };
+
+            if (User.Identity.IsAuthenticated)
+            {
+                viewModel.IsLogged = true;
+
+                var userId = User.Identity.GetUserId();
+
+                viewModel.IsAttending = viewModel.Gig.Attendances
+                    .Any(a => a.AttendeeId == userId);
+
+                viewModel.IsFollowing = _context.Followings
+                        .Any(f =>
+                            f.ArtistId == viewModel.Gig.ArtistId &&
+                            f.FollowerId == userId);
+            }
+
+            return View(viewModel);
+        }
+
+        [Authorize]
         public ActionResult Mine()
         {
             var userId = User.Identity.GetUserId();
@@ -30,6 +61,7 @@ namespace GigHub.Controllers
             return View(gigs);
         }
 
+        [Authorize]
         public ActionResult Attending()
         {
             var userId = User.Identity.GetUserId();
@@ -44,6 +76,7 @@ namespace GigHub.Controllers
             return View(gigs);
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new GigFormViewModel
@@ -55,6 +88,7 @@ namespace GigHub.Controllers
             return View("GigForm", viewModel);
         }
 
+        [Authorize]
         public ActionResult Edit(int id)
         {
             var userId = User.Identity.GetUserId();
@@ -76,6 +110,7 @@ namespace GigHub.Controllers
             return View("GigForm", viewModel);
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(GigFormViewModel viewModel)
@@ -99,7 +134,8 @@ namespace GigHub.Controllers
 
             return RedirectToAction("Mine", "Gigs");
         }
-        
+
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Update(GigFormViewModel viewModel)

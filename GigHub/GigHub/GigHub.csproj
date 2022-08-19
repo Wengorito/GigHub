@@ -204,6 +204,7 @@
     <Compile Include="Models\NotificationType.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\UserNotification.cs" />
+    <Compile Include="ViewModels\GigDetailsViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="Dtos\FollowDto.cs" />
     <Compile Include="Controllers\Api\FollowingsController.cs" />
@@ -354,6 +355,7 @@
     <Content Include="Views\Gigs\Attending.cshtml" />
     <Content Include="Views\Followings\Index.cshtml" />
     <Content Include="Views\Gigs\Mine.cshtml" />
+    <Content Include="Views\Gigs\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -374,6 +376,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202208051448387_InitialModel.resx">
       <DependentUpon>202208051448387_InitialModel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202208051504364_CreateGigTable.resx">
       <DependentUpon>202208051504364_CreateGigTable.cs</DependentUpon>

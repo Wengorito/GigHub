@@ -1,0 +1,52 @@
+﻿@model GigHub.ViewModels.GigDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+    @Model.Gig.Artist.Name
+    @if (Model.IsLogged)
+    {
+        if (Model.IsFollowing)
+        {
+            <button data-artist-id="@Model.Gig.ArtistId" class="btn btn-info btn-sm js-toggle-following">Following</button>
+        }
+        else
+        {
+            <button data-artist-id="@Model.Gig.ArtistId" class="btn btn-default btn-sm js-toggle-following">Follow</button>
+        }
+    }
+</h2>
+<p>
+    Performing at @Model.Gig.Venue on @Model.Gig.DateTime.ToString("d MMM yyyy") at @Model.Gig.DateTime.ToString("HH:mm")
+</p>
+@if (Model.IsLogged && Model.IsAttending)
+{
+    <p>You are going to this event.</p>
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".js-toggle-following").click(function (e) {
+                var button = $(e.target);
+                $.post("/api/followings", { artistId: button.attr("data-artist-id") })
+                    .done(function () {
+                        button
+                            .removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Following");
+                    })
+                    .fail(function () {
+                        alert("Something went wrong");
+                    })
+            });
+        });
+    </script>
+}
+
+
+
+
