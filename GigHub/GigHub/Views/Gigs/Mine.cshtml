@@ -50,14 +50,11 @@
                     buttons: {
                         no: {
                             label: "No",
-                            className: 'btn-danger',
-                            callback: function () {
-                                bootbox.hideAll();
-                            }
+                            className: 'btn-default'
                         },
                         yes: {
                             label: "Yes",
-                            className: 'btn-info',
+                            className: 'btn-danger',
                             callback: function () {
                                 $.ajax({
                                     url: "/api/gigs/" + link.attr("data-gig-id"),
