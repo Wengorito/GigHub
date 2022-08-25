@@ -6,7 +6,7 @@
 
 <h2 id="details">
     @Model.Gig.Artist.Name
-    @if (Model.IsLogged)
+    @if (Model.IsAuthenticated)
     {
         <button data-artist-id="@Model.Gig.ArtistId" class="btn @(Model.IsFollowing ? "btn-info" : "btn-default") btn-sm js-toggle-follow">
             @(Model.IsFollowing ? "Following" : "Follow?")
@@ -17,7 +17,7 @@
 <p>
     Performing at @Model.Gig.Venue on @Model.Gig.DateTime.ToString("d MMM yyyy") at @Model.Gig.DateTime.ToString("HH:mm")
 </p>
-@if (Model.IsLogged && Model.IsAttending)
+@if (Model.IsAuthenticated && Model.IsAttending)
 {
     <p>You are going to this event.</p>
 }
