@@ -10,9 +10,9 @@ namespace GigHub.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public FollowingsController()
+        public FollowingsController(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = new UnitOfWork(new ApplicationDbContext());
+            _unitOfWork = unitOfWork;
         }
 
         public ActionResult Index()

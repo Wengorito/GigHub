@@ -1,5 +1,4 @@
-﻿using GigHub.Models;
-using GigHub.Persistence;
+﻿using GigHub.Persistence;
 using Microsoft.AspNet.Identity;
 using System.Web.Http;
 
@@ -10,9 +9,9 @@ namespace GigHub.Controllers.Api
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public GigsController()
+        public GigsController(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = new UnitOfWork(new ApplicationDbContext());
+            _unitOfWork = unitOfWork;
         }
 
         [HttpDelete]
