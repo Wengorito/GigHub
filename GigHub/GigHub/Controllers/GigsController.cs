@@ -27,15 +27,15 @@ namespace GigHub.Controllers
 
             if (User.Identity.IsAuthenticated)
             {
-                var userId = User.Identity.GetUserId();
-
                 viewModel.IsAuthenticated = true;
+
+                var userId = User.Identity.GetUserId();
 
                 viewModel.IsAttending =
                     viewModel.Gig.Attendances.Any(a => a.AttendeeId == userId);
 
                 viewModel.IsFollowing =
-                    _unitOfWork.Followings.GetFollowing(userId, gig.ArtistId) != null;
+                    _unitOfWork.Followings.GetFollowing(gig.ArtistId, userId) != null;
             }
 
             return View(viewModel);
