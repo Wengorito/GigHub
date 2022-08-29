@@ -1,6 +1,6 @@
-﻿using GigHub.Models;
-using GigHub.Persistence;
-using GigHub.ViewModels;
+﻿using GigHub.Core;
+using GigHub.Core.Models;
+using GigHub.Core.ViewModels;
 using Microsoft.AspNet.Identity;
 using System.Linq;
 using System.Web.Mvc;
@@ -134,7 +134,13 @@ namespace GigHub.Controllers
                 return View("GigForm", viewModel);
             }
 
-            var gig = _unitOfWork.Gigs.GetGigByArtistWithAttendees(User.Identity.GetUserId(), viewModel.Id);
+            var gig = _unitOfWork.Gigs.GetGigWithAttendees(viewModel.Id);
+
+            if (gig == null)
+                return HttpNotFound();
+
+            if (gig.ArtistId != User.Identity.GetUserId())
+                return new HttpUnauthorizedResult();
 
             gig.Modify(viewModel.Venue, viewModel.Genre, viewModel.GetDateTime());
 

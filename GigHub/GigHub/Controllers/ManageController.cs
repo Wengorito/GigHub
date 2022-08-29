@@ -1,12 +1,11 @@
-﻿using System;
+﻿using GigHub.Core.ViewModels.ManageViewModels;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using GigHub.ViewModels.ManageViewModels;
 
 namespace GigHub.Controllers
 {

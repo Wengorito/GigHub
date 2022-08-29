@@ -1,4 +1,4 @@
-﻿using GigHub.Persistence;
+﻿using GigHub.Core;
 using Microsoft.AspNet.Identity;
 using System.Web.Http;
 
@@ -17,13 +17,15 @@ namespace GigHub.Controllers.Api
         [HttpDelete]
         public IHttpActionResult Cancel(int id)
         {
-            var gig = _unitOfWork.Gigs.GetGigByArtistWithAttendees(User.Identity.GetUserId(), id);
+            var userId = User.Identity.GetUserId();
 
-            if (gig == null)
+            var gig = _unitOfWork.Gigs.GetGigWithAttendees(id);
+
+            if (gig == null || gig.IsCanceled)
                 return NotFound();
 
-            if (gig.IsCanceled)
-                return NotFound();
+            if (gig.ArtistId != userId)
+                return Unauthorized();
 
             gig.Cancel();
 

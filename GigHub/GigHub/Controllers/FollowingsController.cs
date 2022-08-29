@@ -1,5 +1,5 @@
-﻿using GigHub.Models;
-using GigHub.Persistence;
+﻿using GigHub.Core;
+using GigHub.Core.Models;
 using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -17,7 +17,7 @@ namespace GigHub.Controllers
 
         public ActionResult Index()
         {
-            IEnumerable<ApplicationUser> artists = _unitOfWork.Followings.GetFollowedArtists(User.Identity.GetUserId());
+            IEnumerable<ApplicationUser> artists = _unitOfWork.ApplicationUsers.GetFollowedArtists(User.Identity.GetUserId());
 
             return View(artists);
         }
