@@ -29,7 +29,7 @@
                 <span class="genre">
                     @gig.Genre.Name
                 </span>
-                <button data-gig-id="@gig.Id" class="btn btn-danger btn-sm js-delete-attendance">Remove</button>
+                <button data-gig-id="@gig.Id" class="btn btn-danger btn-sm js-delete-attendance">Unsubscribe</button>
             </div>
         </li>
     }
@@ -38,7 +38,7 @@
 {
     <script>
         $(document).ready(function () {
-            CalendarController.init("#calendar");
+            AttendancesController.init("#calendar");
         });
     </script>
 }

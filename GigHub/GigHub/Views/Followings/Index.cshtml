@@ -4,18 +4,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Who I follow</h1>
+<h1>Followed Artists</h1>
 
-<ul class="followings voffset4">
+<ul id="followingsList" class="followings voffset4">
     @foreach (var artist in Model)
     {
         <li>
             <div class="artist">
                 <span>
-                    @artist.Name <button data-artist-id="@artist.Id" class="btn btn-link btn-sm js-toggle-following">Unfollow</button>
+                    @artist.Name
                 </span>
+                <div>
+                    <button data-artist-id="@artist.Id" class="btn btn-link btn-sm js-delete-following">Unfollow</button>
+
+                </div>
             </div>
         </li>
     }
 </ul>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            FollowingsController.init("#followingsList");
+        });
+    </script>
+}
 

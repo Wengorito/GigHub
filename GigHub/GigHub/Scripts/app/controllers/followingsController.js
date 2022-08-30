@@ -1,18 +1,19 @@
-﻿var CalendarController = function (attendanceService) {
+﻿var FollowingsController = function (followingService) {
     var button;
 
     var init = function (container) {
-        $(container).on("click", ".js-delete-attendance", deleteAttendance);
+        $(container).on("click", ".js-delete-following", deleteFollowing);
     };
 
-    var deleteAttendance = function (e) {
+    var deleteFollowing = function (e) {
+        console.log('click');
         button = $(e.target);
 
-        var gigId = button.attr("data-gig-id");
-
+        var artistId = button.attr("data-artist-id");
+        
         bootbox.confirm({
             size: "small",
-            message: "Sure you are not going?",
+            message: "Unfollow artist?",
             buttons: {
                 confirm: {
                     label: 'Yes',
@@ -25,7 +26,7 @@
             },
             callback: function (result) {
                 if (result) {
-                    attendanceService.deleteAttendance(gigId, done, fail);  
+                    followingService.unfollowArtist(artistId, done, fail);
                 }
             }
         });
@@ -38,11 +39,11 @@
     }
 
     var fail = function () {
-        alert("Delete attendance failed");
+        alert("Unfollow failed");
     };
 
     return {
         init: init
     };
 
-}(AttendanceService);
+}(FollowingService);
