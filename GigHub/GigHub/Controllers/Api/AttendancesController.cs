@@ -19,13 +19,13 @@ namespace GigHub.Controllers.Api
         [HttpPost]
         public IHttpActionResult Attend(AttendanceDto dto)
         {
+            // Unnecessary safe-check?
             if (dto == null)
                 return BadRequest();
 
             var userId = User.Identity.GetUserId();
-            var gigId = dto.GigId;
 
-            if (_unitOfWork.Attendances.GetAttendance(userId, gigId) != null)
+            if (_unitOfWork.Attendances.GetAttendance(userId, dto.GigId) != null)
                 return BadRequest("The Attendance already exists.");
 
             var attendance = new Attendance
@@ -48,6 +48,10 @@ namespace GigHub.Controllers.Api
 
             if (attendance == null)
                 return NotFound();
+
+            if (attendance.AttendeeId != userId)
+                return Unauthorized();
+
             _unitOfWork.Attendances.Remove(attendance);
             _unitOfWork.Complete();
 
