@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Web.Http.Results;
 
-namespace GigHub.Test.Controllers.Api
+namespace GigHub.Tests.Controllers.Api
 {
     [TestClass]
     public class GigsControllerTests

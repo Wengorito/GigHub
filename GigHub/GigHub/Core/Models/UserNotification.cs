@@ -18,6 +18,7 @@ namespace GigHub.Core.Models
         public Notification Notification { get; private set; }
         public bool IsRead { get; private set; }
 
+        // Protected constructor supposedly required by EF> but why only here?
         protected UserNotification()
         {
         }

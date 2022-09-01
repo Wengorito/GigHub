@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigHub", "GigHub\GigHub.csproj", "{6C95DE95-DE34-40A5-937F-BB9338953ED1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigHub.Test", "GigHub.Test\GigHub.Test.csproj", "{26A89F59-1A37-418B-826E-68D7F5ECFB61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigHub.Tests", "GigHub.Test\GigHub.Tests.csproj", "{26A89F59-1A37-418B-826E-68D7F5ECFB61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,7 +36,7 @@ Global
 		SccProjectUniqueName1 = GigHub\\GigHub.csproj
 		SccProjectName1 = GigHub
 		SccLocalPath1 = GigHub
-		SccProjectUniqueName2 = GigHub.Test\\GigHub.Test.csproj
+		SccProjectUniqueName2 = GigHub.Test\\GigHub.Tests.csproj
 		SccProjectName2 = GigHub.Test
 		SccLocalPath2 = GigHub.Test
 	EndGlobalSection

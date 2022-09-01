@@ -3,16 +3,11 @@ using GigHub.Core.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
-namespace GigHub.Test.Core.Models
+namespace GigHub.Tests.Core.Models
 {
     [TestClass]
     public class GigTests
     {
-        public GigTests()
-        {
-
-        }
-
         [TestMethod]
         public void Cancel_WhenCalled_ShouldSetIsCanceledToTrue()
         {
