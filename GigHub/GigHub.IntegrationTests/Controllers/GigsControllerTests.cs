@@ -30,6 +30,42 @@ namespace GigHub.IntegrationTests.Controllers
             _context.Dispose();
         }
 
+        //[Test, Isolated]
+        //public void Details_UserNotAuthenticated_ShouldReturnViewModelWithGivenGig()
+        //{
+        //    // Arrange
+        //    var user = _context.Users.First();
+        //    var genre = _context.Genres.First();
+        //    var gig = new Gig { Artist = user, DateTime = DateTime.Now.AddDays(1), Genre = genre, Venue = "-" };
+        //    _context.Gigs.Add(gig);
+        //    _context.SaveChanges();
+
+        //    // Act
+        //    var result = _controller.Details(gig.Id);
+
+        //    // Assert
+        //    (result as GigDetailsViewModel).Should().HaveCount(1);
+        //}
+
+        //[Test, Isolated]
+        //public void Details_UserAuthenticated_ShouldReturnViewModelWithGivenGigAndFollowingFlagTrue()
+        //{
+        //    // Arrange
+        //    var user = _context.Users.First();
+        //    _controller.MockCurrentUser(user.Id, user.UserName);
+
+        //    var genre = _context.Genres.First();
+        //    var gig = new Gig { Artist = user, DateTime = DateTime.Now.AddDays(1), Genre = genre, Venue = "-" };
+        //    _context.Gigs.Add(gig);
+        //    _context.SaveChanges();
+
+        //    // Act
+        //    var result = _controller.Details(gig.Id);
+
+        //    // Assert
+        //    
+        //}
+
         [Test, Isolated]
         public void Mine_WhenCalled_ShouldReturnUpcomingGigs()
         {
