@@ -9,7 +9,7 @@
 * [Author](#author)
 
 ## Demo
-Deployed application demo available on Azure hosting server.
+Deployed application demo available on Azure hosting server.__
 _[App deployed to Azure App Service]()_
 
 ## General information
