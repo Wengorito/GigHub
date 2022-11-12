@@ -10,7 +10,7 @@
 
 ## Demo
 Deployed application demo available on Azure hosting server.  
-_[App deployed to Azure App Service]()_
+_[App deployed to Azure App Service](https://gighub20221111173635.azurewebsites.net/)_
 
 ## General information
 This project was a follow-up of the prior first encounter with ASP.NET MVC 5 framework. 
