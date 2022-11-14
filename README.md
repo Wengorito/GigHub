@@ -6,11 +6,11 @@
 * [Demo](#demo)
 * [General information](#general-information)
 * [Topics](#topics)
+* [3rd party libraries and plugins](#3rd-party-libraries-and-plugins)
 * [Author](#author)
 
 ## Demo
-Deployed application demo available on Azure hosting server.  
-_[App deployed to Azure App Service](https://gighub20221111173635.azurewebsites.net/)_
+>_[Vidly @ Azure App Service](https://gighub20221111173635.azurewebsites.net/)_
 
 ## General information
 This project was a follow-up of the prior first encounter with ASP.NET MVC 5 framework. 
@@ -19,13 +19,27 @@ It provides basic functionality of mini social networking application for music 
 It misses few features and tests, but is kept deployment-ready.
 
 ## Topics
-- ASP.NET MVC
-- Web API Entity Framework 6 - Code First
-- Bootstrap3
+- ASP.NET MVC 5
+- Web API 
+- Entity Framework 6 (Code First)
+- JavaScript
 - HTML5
 - CSS3
 - Clean architecture
 - Automated testing
+
+# 3rd-party libraries and plugins
+- Ninject
+- Moq
+- AutoMapper
+- jQuery AJAX
+- jQuery .validate
+- Bootstrap3
+- Bootswatch
+- Underscore.js
+- Moment.js
+- Bootbox.js
+- Less CSS
 
 ## Author
 Wengorito Inc.
