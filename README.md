@@ -10,7 +10,7 @@
 * [Author](#author)
 
 ## Demo
->_[Vidly @ Azure App Service](https://gighub20221111173635.azurewebsites.net/)_
+>_[GigHub @ Azure App Service](https://gighub20221111173635.azurewebsites.net/)_
 
 ## General information
 This project was a follow-up of the prior first encounter with ASP.NET MVC 5 framework. 
