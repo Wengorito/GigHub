@@ -28,7 +28,7 @@ It misses few features and tests, but is kept deployment-ready.
 - Clean architecture
 - Automated testing
 
-# 3rd-party libraries and plugins
+## 3rd-party libraries and plugins
 - Ninject
 - Moq
 - AutoMapper
