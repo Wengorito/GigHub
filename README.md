@@ -40,6 +40,7 @@ It misses few features and tests, but is kept deployment-ready.
 - Moment.js
 - Bootbox.js
 - Less CSS
+- Animate.css
 
 ## Author
 Wengorito Inc.
