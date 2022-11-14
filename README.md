@@ -41,6 +41,7 @@ It misses few features and tests, but is kept deployment-ready.
 - Bootbox.js
 - Less CSS
 - Animate.css
+- Postman
 
 ## Author
 Wengorito Inc.
